@@ -14,6 +14,11 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
+    if (params[:article][:image] != nil )
+      monimage = Monimage.new(monimagename: params[:article][:monimagename], image: params[:article][:image])
+      @article.monimage = monimage
+    end
+
     if @article.save
       redirect_to @article
     else
@@ -27,6 +32,11 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+
+    if (params[:article][:image] != nil )
+      monimage = Monimage.new(titre: params[:article][:monimagename], image: params[:article][:image])
+      @article.monimage = monimage
+    end
 
     if @article.update(article_params)
       redirect_to @article
@@ -44,6 +54,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :image, :body, :status)
+      params.require(:article).permit(:title, :body, :status, image: [])
     end
 end

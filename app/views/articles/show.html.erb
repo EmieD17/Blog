@@ -1,6 +1,9 @@
 <h1><%= @article.title %></h1>
 
-<p><%= image_tag(@article.image) %></p>
+
+  <p><%= image_tag(@article.monimage.image, width: '50%') %><br>
+  <%= @article.monimage.image.filename.base %></p>
+
 
 <p><%= @article.body %></p>
 

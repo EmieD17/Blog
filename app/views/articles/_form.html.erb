@@ -3,15 +3,17 @@
       <%= form.label :title %><br>
       <%= form.text_field :title %>
       <% article.errors.full_messages_for(:title).each do |message| %>
-        <div><%= message %></div>
+        <div><%= message %></div><br>
       <% end %>
     </div>
 
     <div class = "field">
-      <%= form.label :image %><br>
-      <%= form.file_field :image %><br>
+      <%= form.label :monimagename %><br>
+      <%= form.text_field :monimagename %>
+      <%= form.label :image %>
+      <%= form.file_field :image %>
       <% article.errors.full_messages_for(:image).each do |message| %>
-        <div><%= message %></div>
+        <div><%= message %></div><br>
       <% end %>
     </div>
   
@@ -19,7 +21,7 @@
       <%= form.label :body %><br>
       <%= form.text_area :body %><br>
       <% article.errors.full_messages_for(:body).each do |message| %>
-        <div><%= message %></div>
+        <div><%= message %></div><br>
       <% end %>
     </div>
 
@@ -31,5 +33,6 @@
     <div>
       <%= form.submit %>
     </div>
+    
   <% end %>
   
