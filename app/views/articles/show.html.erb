@@ -1,8 +1,7 @@
 <h1><%= @article.title %></h1>
 
 
-  <p><%= image_tag(@article.monimage.image, width: '50%') %><br>
-  <%= @article.monimage.image.filename.base %></p>
+  <p><%= image_tag(@article.monimage.image, width: '50%', :title => @article.monimage.image.filename.base) %><br>
 
 
 <p><%= @article.body %></p>

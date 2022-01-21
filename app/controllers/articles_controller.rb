@@ -15,8 +15,8 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if (params[:article][:image] != nil )
-      monimage = Monimage.new(monimagename: params[:article][:monimagename], image: params[:article][:image])
-      @article.monimage = monimage
+      #monimage.titre = monimage.image.filename.base
+      @article.monimage = Monimage.new(image: params[:article][:image])
     end
 
     if @article.save
@@ -34,8 +34,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if (params[:article][:image] != nil )
-      monimage = Monimage.new(titre: params[:article][:monimagename], image: params[:article][:image])
-      @article.monimage = monimage
+      @article.monimage = Monimage.new(image: params[:article][:image])
     end
 
     if @article.update(article_params)
@@ -54,6 +53,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body, :status, image: [])
+      params.require(:article).permit(:title, :body, :status)
     end
 end

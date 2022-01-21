@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2022_01_20_224634) do
   end
 
   create_table "monimages", charset: "utf8mb4", force: :cascade do |t|
-    t.string "monimagename"
+    t.string "titre"
     t.string "imageable_type"
     t.bigint "imageable_id"
     t.datetime "created_at", precision: 6, null: false

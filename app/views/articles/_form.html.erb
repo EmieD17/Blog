@@ -7,12 +7,10 @@
       <% end %>
     </div>
 
-    <div class = "field">
-      <%= form.label :monimagename %><br>
-      <%= form.text_field :monimagename %>
+    <div>
       <%= form.label :image %>
       <%= form.file_field :image %>
-      <% article.errors.full_messages_for(:image).each do |message| %>
+      <% article.errors.full_messages_for(:monimage).each do |message| %>
         <div><%= message %></div><br>
       <% end %>
     </div>
@@ -35,4 +33,8 @@
     </div>
     
   <% end %>
+
+  <div>
+    <%= link_to "Back", :back %>
+  </div>
   
