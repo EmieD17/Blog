@@ -8,6 +8,6 @@ class Article < ApplicationRecord
   #accepts_nested_attributes_for :monimage
 
   validates :title, presence: true
-  validates :monimage, presence: true
+  #validates :monimage, presence: true
   validates :body, presence: true, length: { minimum: 10 }
 end
