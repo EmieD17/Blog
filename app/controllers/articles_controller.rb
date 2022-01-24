@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
     if (params[:article][:image] != nil )
       #monimage.titre = monimage.image.filename.base
       @article.monimage = Monimage.new(image: params[:article][:image])
+      
     end
 
     if @article.save
